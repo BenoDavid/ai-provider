@@ -6,7 +6,11 @@ const app = express();
 const PORT = 8090;
 
 app.use(bodyParser.json());
+app.get('/', async (req, res) => {
 
+    res.status(200).json({ msg: "Welcome to AI" });
+
+});
 app.post('/api/chat', async (req, res) => {
     try {
         const prompt = req.body.prompt || "Hello!";
